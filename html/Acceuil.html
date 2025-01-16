@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Responsive</title>
+    <title>CookSpot - Vins</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/style/Acceuil.css">
+
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">CookSpot</a>
@@ -15,25 +17,136 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="Acceuil.html">Accueil</a>
+                <a class="nav-link" aria-current="page" href="Acceuil.html">Accueil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="AddForm.html">Ajouter</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="More.html">How to use</a>
-    
+              </li>
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
+    <section class="container main-content">
+        <h1 class="text-center my-5" style="font-size: 100px;">Bienvenue sur CookSpot</h1>
+        <p class="text-center">CookSpot est une application web qui vous permet de partager vos recettes de cuisine avec le monde entier. Vous pouvez également consulter les recettes des autres utilisateurs et les noter.</p>
+
+        <div class="container mt-4">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Rechercher un vin...">
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select" id="filterSelect">
+                        <option selected>Catégorie</option>
+                        <option value="Entée">Entée</option>
+                        <option value="Plat-Principal">Plat Principal</option>
+                        <option value="Dessert">Dessert</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" id="wineCards">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2025/01/Popcorn-chicken_3-close-up.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Rouge">
+                        <div class="card-body">
+                            <h5 class="card-title">Popcorn chicken</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2025/01/Bruschetta-pasta-salad_9.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Blanc">
+                        <div class="card-body">
+                            <h5 class="card-title">Bruschetta summer pasta salad</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2024/12/Christmas-cheesecake-no-bake-slab_4.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Rosé">
+                        <div class="card-body">
+                            <h5 class="card-title">A Christmas dessert</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2024/11/Nutella-stuffed-cookies_5-1.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Rouge">
+                        <div class="card-body">
+                            <h5 class="card-title">Nutella Stuffed Cookies</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2015/11/Nandos-Peri-Peri-Chicken-Burger_9.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Blanc">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Burger</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://www.recipetineats.com/tachyon/2024/11/New-Oreleans-chicken-wings_1.jpg?resize=1200%2C1500&zoom=0.54" class="card-img-top" alt="Vin Rosé">
+                        <div class="card-body">
+                            <h5 class="card-title">New Orleans Chicken Wings</h5>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-primary">Voir plus</a>
+                            <button class="btn btn-danger" onclick="deleteCard(this)">Supprimer</button>
+                            <button class="btn btn-warning" onclick="editCard(this)">Modifier</button>
+                        </div>
+                    </div>
+                </div>
 
 
+                
 
+              <ul id="list" ></ul>  
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 footer">
+        <div class="container">
+            <p>&copy; 2025 CookSpot. Tous droits réservés.</p>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/script/script.js"></script>
+   
 </body>
-
 </html>
